@@ -1,9 +1,8 @@
 #include<iostream>
 using namespace std;
 
-const int size=24;
 
-float average(int t[])
+float average(int t[],int size)
 {
     float avg,sum=0;
     for(int i=0;i<size;i++)
@@ -16,10 +15,10 @@ float average(int t[])
     return avg;
 }
 
-int min(int t[])
+int min(int t[],int size)
 {
     int min=t[0];
-    for(int i=1;i<=size;i++)
+    for(int i=1;i<size;i++)
     {
         if(t[i]<min)
         {
@@ -31,10 +30,10 @@ int min(int t[])
     return min;
 }
 
-int max(int t[])
+int max(int t[],int size)
 {
     int max=t[0];
-    for(int i=1;i<=size;i++)
+    for(int i=1;i<size;i++)
     {
         if(t[i]>max)
         {
@@ -48,11 +47,13 @@ int max(int t[])
 
 int main()
 {
-    int temperature[size]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+    int size=24;
+    int temperature[24]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+    
 
-    cout<<average(temperature)<<endl;
-    cout<<min(temperature)<<endl;
-    cout<<max(temperature)<<endl;
+    cout<<average(temperature,size)<<endl;
+    cout<<min(temperature,size)<<endl;
+    cout<<max(temperature,size)<<endl;
 
     return 0;
 }
