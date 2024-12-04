@@ -1,0 +1,1 @@
+myfile>>std_name;
