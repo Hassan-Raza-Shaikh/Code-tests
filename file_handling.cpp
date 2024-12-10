@@ -39,7 +39,7 @@ int main()
     string name;
     int marks;
 
-    getline(ss,name,',');
+    getline(ss,name,',');                  //seperate a string at a certain part
     ss>>marks;
 
     n_array[index] = name;

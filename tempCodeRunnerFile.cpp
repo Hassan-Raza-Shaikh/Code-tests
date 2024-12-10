@@ -1,1 +1,0 @@
-myfile>>std_name;
