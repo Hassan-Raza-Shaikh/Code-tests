@@ -9,7 +9,7 @@ int main()
     {
         for(int c=0;c<2;c++)
         {
-            cout<<"Enter the value in 2d array at ["<<r+1<<"]["<<c+1<<"]"<<endl;
+            cout<<"Enter the value in 2D array at ["<<r+1<<"]["<<c+1<<"]"<<endl;
             cin>>arr[r][c];
         }
     }
