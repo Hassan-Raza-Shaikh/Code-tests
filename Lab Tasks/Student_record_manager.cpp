@@ -21,24 +21,24 @@ int main()
 
     fstream srm;
 
-    srm.open("Student_record_manager.txt", ios::in | ios::out | ios::app);
+    srm.open("Student_record_manager.txt", ios::app | ios::out | ios::in);
     // srm<<rno<<"\n";
     // srm<<name<<"\n";
     // srm<<course<<"\n";
     // srm<<marks<<"\n";
 
     string check;
-    srm.seekg(1);
-   for(int i=1;i<=4;i++)
-   {
-    getline(srm,check);
-   }
+    srm.seekg(0);
+    for(int i=1;i<=4;i++)
+    {
+        getline(srm,check);
+    }
 
-   for(int i=1;i<=4;i++)
-   {
-    getline(srm,check);
-    cout<<check<<"\n";
-   }
+    for(int i=1;i<=4;i++)
+    {
+        getline(srm,check);
+        cout<<check<<"\n";
+    }
 
     srm.close();
 
