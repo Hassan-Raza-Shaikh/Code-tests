@@ -16,6 +16,7 @@ int main()
     // cout<<"The name of father is: "<<fatherName<<endl;
 
     fstream myfile;
+    
     myfile.open("file_handling.txt", ios::in);
 
     // string std_name;
