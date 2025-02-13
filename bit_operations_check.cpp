@@ -3,11 +3,21 @@
 #include<iomanip>
 using namespace std;
 
+void binary(int u)
+{
+    cout<<setw(5)<<u<<": ";
+    cout<< bitset<8>((int)u);
+    cout<<"\n";
+}
+
 int main()
 {
     int n=127; //000
-    n = (4<<1);           /// turns position of the second digit according to computer architecture to be to be the first parameter only if the number i a power of 2 otherwise it resets the whole bit
+    n = (1>>2);           
     cout<<n;
+
+    binary(5);
+    
     
    
     return 0;
