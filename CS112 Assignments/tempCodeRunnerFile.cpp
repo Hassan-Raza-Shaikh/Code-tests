@@ -1,0 +1,1 @@
+#define CALCULATE_STOCK_VALUE
