@@ -16,7 +16,6 @@ class Robot : public Animal
     virtual void speak()  { cout << "Robot: Beep Boop!" << endl; }
 };
     
-
 class RobotDog : public Animal
 {public:
     void speak()  { cout << "RobotDog: Bark! Beep!" << endl; }
