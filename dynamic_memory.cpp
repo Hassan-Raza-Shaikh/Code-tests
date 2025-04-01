@@ -11,7 +11,7 @@ void print(int *arr)
 
 int main()
 {
-    int size=1;
+    int size=1;               // Declaring a small size and letting it increase like this works but apparently may cause issues
     int *arr = new int[size];
    
     print(arr);
