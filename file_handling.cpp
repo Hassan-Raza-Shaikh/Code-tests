@@ -49,6 +49,8 @@ int main()
     cout<<n_array[index]<<endl;
     cout<<m_array[index]<<endl;
 
+    myfile.close();
+
 
     return 0;
 }
