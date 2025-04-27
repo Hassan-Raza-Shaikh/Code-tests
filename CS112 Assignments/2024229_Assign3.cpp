@@ -113,7 +113,7 @@ int main()
     }
     else
     {
-        cout<<"Enter text to write to the file at 5th byte:  "<<endl;
+        cout<<"Enter text to write to the file at 6th byte:  "<<endl;
         getline(cin, line);
         file.seekp(5, ios::beg);
         file<<line;

@@ -30,24 +30,40 @@ int main()
     // getline(myfile,std_name);
     // cout<<std_name<<endl;
 
-    string line;
-    string n_array[100];
-    string m_array[100];
-    int index=0;
+    // string line;
+    // string n_array[100];
+    // string m_array[100];
+    // int index=0;
 
-    getline(myfile,line);
-    stringstream ss(line);
-    string name;
-    int marks;
+    // getline(myfile,line);
+    // stringstream ss(line);
+    // string name;
+    // int marks;
 
-    getline(ss,name,',');                  //seperate a string at a certain part
-    ss>>marks;
+    // getline(ss,name,',');                  //seperate a string at a certain part
+    // ss>>marks;
 
-    n_array[index] = name;
-    m_array[index] = marks;
+    // n_array[index] = name;
+    // m_array[index] = marks;
 
-    cout<<n_array[index]<<endl;
-    cout<<m_array[index]<<endl;
+    // cout<<n_array[index]<<endl;
+    // cout<<m_array[index]<<endl;
+
+    int count =-1;
+    string str;
+    if(myfile.is_open())
+    {
+        cout<<"File is open"<<endl;
+    }
+    else
+    {
+        cout<<"File is not open"<<endl;
+    }
+    while(getline(myfile,str))
+    {
+        count++;
+    }
+    cout<<count<<endl;
 
     myfile.close();
 
