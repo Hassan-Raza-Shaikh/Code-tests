@@ -1,1 +1,4 @@
-n = (1<<0);
+void display()
+        // {
+        //     cout<<"child2 display function called"<<endl;
+        // }
