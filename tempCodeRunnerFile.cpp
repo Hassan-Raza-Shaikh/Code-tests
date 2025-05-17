@@ -1,4 +1,6 @@
-void display()
-        // {
-        //     cout<<"child2 display function called"<<endl;
-        // }
+
+        name=n;
+        age=a;
+        id=i;
+        
+    }
