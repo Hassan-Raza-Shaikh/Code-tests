@@ -86,3 +86,49 @@ concrete data types: array, struct, class, linked list
 linear data structures: array, linked list, stack, queue
 non linear data structures: tree, graph
 see abstract classes, and general classes?
+array combiinations??
+why dynamic arrays a thing?
+insert at end, start, middle???
+
+Lecture 5
+array is static memory allocation, linked list is dynamic memory allocation
+array is continuous memory locations, linked list is scattered memory locations
+array is fixed size, linked list is variable size
+array is faster access, linked list is slower access
+array is slower insertion and deletion, linked list is faster insertion and deletion
+linked list uses pointer, array doesn't use pointer
+we use built in mechanisms of array, linked list we have to build it ourselves
+array memory is allocated at compile time, linked list memory is allocated at run time
+array memory is allocated in stack, linked list memory is allocated in heap
+linked list address of next index is stored in current index
+linked list is memory efficient, array is memory inefficient
+linked list can grow and shrink, array can't grow and shrink
+performance is measured in two things:
+-time
+-space
+basic unit of array is index
+basic unit of linked list is node(index)
+linked list node needs to be made manually, array index is done by itself
+we need to define node of a linked list
+node is made using structures or classes
+same node is used in trees, linked lists among other things
+u need to keep two things in linked list index, value at that index and adress of next address
+137 street 5 yateemabad, mansera
+type of pointer must be type of class or structure
+struct Node
+{
+    int value;
+    Node *next;
+}
+int main()
+{
+    Node n1,n2,n3;
+    n1.value=5;
+    n2.value=6;
+    n3.value=7;
+    n1.next=&n2;
+    n2.next=&n3;
+    n3.next=nullptr;
+}
+ye sahi linked list nahi bani, because fixed and no addition or removal
+
