@@ -114,22 +114,37 @@ we need to define node of a linked list
 node is made using structures or classes
 same node is used in trees, linked lists among other things
 u need to keep two things in linked list index, value at that index and adress of next address
-137 street 5 yateemabad, mansehram
 type of pointer must be type of class or structure
 struct Node
 {
-    int value;
+    int data;
     Node *next;
-}
+};
 int main()
 {
     Node n1,n2,n3;
-    n1.value=5;
-    n2.value=6;
-    n3.value=7;
+    n1.data=5;
+    n2.data=6;
+    n3.data=7;
     n1.next=&n2;
     n2.next=&n3;
     n3.next=nullptr;
 }
 ye sahi linked list nahi bani, because fixed and no addition or removal
+
+Lecture 6
+
+if node is already present, the the node present before it, it will input the adress of new node into old one
+if none present, creeate node 
+
+possibility 1: no node is present
+possibility 2: one or more than one node is present
+linkedlist item can be added from head or tail
+step one create node
+step two check if it is first node or one of many
+step three where do you want to add it start or end
+if keeping at tail, address of tail node needs to be realloted
+step four add adress of new node in the next of last node/tail
+step five next of new node will be made null
+step six update tail pointer from last to new node because it is the new tail
 
