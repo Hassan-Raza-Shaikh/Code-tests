@@ -139,6 +139,7 @@ if none present, creeate node
 
 possibility 1: no node is present
 possibility 2: one or more than one node is present
+we can keep both head and tail or only one of them, but keeping both allow to insert from both ends
 linkedlist item can be added from head or tail
 step one create node
 step two check if it is first node or one of many
@@ -147,4 +148,33 @@ if keeping at tail, address of tail node needs to be realloted
 step four add adress of new node in the next of last node/tail
 step five next of new node will be made null
 step six update tail pointer from last to new node because it is the new tail
+
+Lecture 7
+
+basic two types of linked list: single and double
+singly linked list: node has data and next pointer (2)
+doubly linked list: node has data, next pointer, previous pointer (3)
+circular linked list: node has data and next pointer, last node points to first node
+circular doubly linked list: node has data, next pointer, previous pointer, last node points to first node, first node previous points to last node
+why doubly linked list?
+because we can traverse in both directions
+why circular linked list?
+because we can traverse from any node to any node
+why circular doubly linked list?
+because we can traverse in both directions from any node to any node
+advantages and disadvantages of each?
+advantages of singly linked list: less memory, simple
+disadvantages of singly linked list: can't traverse backwards, can't delete previous node
+advantages of doubly linked list: can traverse backwards, can delete previous node
+disadvantages of doubly linked list: more memory, complex
+advantages of circular linked list: can traverse from any node to any node, no null pointer
+disadvantages of circular linked list: complex, harder to implement
+advantages of circular doubly linked list: can traverse in both directions from any node to any node
+disadvantages of circular doubly linked list: more memory, complex, harder to implement
+for double linkedlist, if adding inbetween, need to update 4 pointers
+replace next of previous node to next of new node
+replace previous of new node to previous node
+for single linkedlist, if adding inbetween, need to update 2 pointers
+replace next of new node with next of previous node
+replace next of previous node with new node
 
