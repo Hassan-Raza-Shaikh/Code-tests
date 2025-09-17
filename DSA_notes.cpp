@@ -191,4 +191,7 @@ after creating node
 allocate next of new node with address of head which can be taken from head or next of tail
 then allocate next of tail to new node
 then update head to new node
+last two steps can be interchanged, but there will be one difference
+if next of tail is allocated to new node first, then head will be updated to new node
+if head is updated to new node first, then next of tail will be allocated to new node or head
 
