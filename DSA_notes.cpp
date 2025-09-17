@@ -178,3 +178,17 @@ for single linkedlist, if adding inbetween, need to update 2 pointers
 replace next of new node with next of previous node
 replace next of previous node with new node
 
+Lecture 8
+
+to create new node int * newnode = new node
+circular behaviour allows us to double back esily to reach easier
+for adding in tail in circular linked list
+after allocating next of tail to next of new node
+then allocating next of tail to new node
+then updating tail to new node
+for adding in head in circular linked list
+after creating node
+allocate next of new node with address of head which can be taken from head or next of tail
+then allocate next of tail to new node
+then update head to new node
+
