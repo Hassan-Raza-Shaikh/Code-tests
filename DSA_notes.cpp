@@ -195,3 +195,6 @@ last two steps can be interchanged, but there will be one difference
 if next of tail is allocated to new node first, then head will be updated to new node
 if head is updated to new node first, then next of tail will be allocated to new node or head
 
+Lecture 9
+
+code of singly linked list
