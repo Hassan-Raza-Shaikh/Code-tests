@@ -198,3 +198,20 @@ if head is updated to new node first, then next of tail will be allocated to new
 Lecture 9
 
 code of singly linked list
+
+Lecture 10
+
+code of doubly linked list
+
+for doubly linked list,
+adding at head
+allocate previos pointer of new node to null
+allocate next pointer of new node to head
+allocate previous of head to new node
+if inserting first node it is tail and head, otherwise don't alter tail
+if(tail==nullptr) tail=newNode;
+else tail remains same's
+update head to new node
+
+Lecture 11
+
