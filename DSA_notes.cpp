@@ -215,3 +215,14 @@ update head to new node
 
 Lecture 11
 
+node can be deleted and inserted in three ways
+at head
+at tail
+in between
+deleting at head
+make next of head head
+delete old head
+make previous of new head null
+if next and previous of head are null, then it is the only node, so delete head and tail both
+deleting at tail
+opposite of deleteing at head
