@@ -226,3 +226,15 @@ make previous of new head null
 if next and previous of head are null, then it is the only node, so delete head and tail both
 deleting at tail
 opposite of deleteing at head
+
+Lecture 12
+
+linked list will have two types of sorting
+- sorting values
+- sorting nodes
+sorting values is easy, just swap values
+sorting nodes is hard, need to change pointers
+for sorting nodes, need to change 4 pointers
+if nodes are adjacent, then need to change 3 pointers
+if nodes are not adjacent, then need to change 4 pointers
+need to handle special cases
