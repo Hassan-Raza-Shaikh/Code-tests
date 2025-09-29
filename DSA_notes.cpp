@@ -242,3 +242,45 @@ do sorting both ways
 
 Lecture 13
 
+circular linked list adding at head and tail is a bit different because of circular nature
+for adding at head in circular linked list
+create new node
+if no node present
+make next of new node point to itself
+make head and tail point to new node
+if one or more node present
+make next of new node point to head
+make next of tail point to new node
+make head point to new node
+for adding at tail in circular linked list
+create new node
+if no node present
+make next of new node point to itself
+make head and tail point to new node
+if one or more node present
+make next of new node point to head
+make next of tail point to new node
+make tail point to new node
+for adding in between in circular linked list
+same as simple double limked list
+circular linked list was needed because we can traverse from any node to any node easily
+and as in practical programming a pointer is set and it can't be changed so circular nature allows fast switching'
+
+there are 3 disffernt ways to use stack in c++
+- by using STL (built in stack)
+- by using array implementation to create stack by ourselves (user defined stack)
+- by using linked list implementation to create stack by ourselves (user defined stack)
+stack works on last in first out mechanism
+in abstract data type, physical implementaion is different but memory implementation is different
+like stack using array, stack we can accesss only top element, but in array we can access any element
+stack using linked list, stack we can accesss only top element, but in linked list we can access any element
+hence stack is abstract data type
+basic operations of stack
+- push (insert element at top)
+- pop (remove element from top)
+- peek/top (get element at top without removing it)
+- isEmpty (check if stack is empty)
+- isFull (check if stack is full)
+- size (get number of elements in stack)
+fixing memory for stack is necessary because stack is static memory allocation and it has a limit so to stay true to that value
+hence we define max size of stack
