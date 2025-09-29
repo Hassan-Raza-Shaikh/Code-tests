@@ -239,3 +239,6 @@ if nodes are adjacent, then need to change 3 pointers
 if nodes are not adjacent, then need to change 4 pointers
 need to handle special cases
 do sorting both ways
+
+Lecture 13
+
