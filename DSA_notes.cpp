@@ -284,3 +284,16 @@ basic operations of stack
 - size (get number of elements in stack)
 fixing memory for stack is necessary because stack is static memory allocation and it has a limit so to stay true to that value
 hence we define max size of stack
+
+Lecture 14
+
+stack is kept size even though it can be limitless because of isFull function, therefore a size is specified, also because by defination it must be fixed
+STL is standard template library, it is a collection of classes and functions for data structures and algorithms, that we use often
+- stack
+- queue
+- vector
+- list
+- map
+- set
+
+top function in STL replaces the last elment or shows the top one depending on how it is used in STL
