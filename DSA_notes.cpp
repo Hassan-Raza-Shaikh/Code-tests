@@ -266,7 +266,7 @@ same as simple double limked list
 circular linked list was needed because we can traverse from any node to any node easily
 and as in practical programming a pointer is set and it can't be changed so circular nature allows fast switching'
 
-there are 3 disffernt ways to use stack in c++
+there are 3 differnt ways to use stack in c++
 - by using STL (built in stack)
 - by using array implementation to create stack by ourselves (user defined stack)
 - by using linked list implementation to create stack by ourselves (user defined stack)
@@ -297,3 +297,32 @@ STL is standard template library, it is a collection of classes and functions fo
 - set
 
 top function in STL replaces the last elment or shows the top one depending on how it is used in STL
+we use top=-1 because array index starts from zero, hence if top=0 then one element is present, if top=-1 then no element is present
+pop returns value and removes it in STL, but in user defined stack it just removes it
+
+Lecture 15
+
+to sort a stack without violating stack rules, instead of sorted, create a stack in a way that it i pre sorted
+two criteria for stack sorting
+- sorting an unsorted already created stack
+- creating a stack in a way that values automatically get sorted after each insertion
+
+queue is also an abstract data type
+queue works on first in first out mechanism
+its logic is opposite of stack, instead of insert and delete at head, we insert at head and delete at tail
+there are 3 differnt ways to use queue in c++
+- STL
+- linked list
+- array
+basic operations of queue
+- enqueue (insert element at rear)
+- dequeue (remove element from front)
+- front (get element at front without removing it)
+- rear (get element at rear without removing it)
+- isEmpty (check if queue is empty)
+- isFull (check if queue is full)
+- size (get number of elements in queue)
+
+potential applications of stack and queue in solving computer problems?
+applications ofstack and queue in schedualing of tasks and jobs while ram and processor are interacting with each oher?
+example application of stack and queue in development of different mobile and web apps in real world scenerios?

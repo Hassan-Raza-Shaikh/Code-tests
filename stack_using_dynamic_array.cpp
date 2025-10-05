@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Stack {
+class Stack{
 private:
     int* arr;     // array to store stack elements
     int top;      // index of the top element

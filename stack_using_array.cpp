@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 100  // maximum size of stack
+#define MAX 5z  // maximum size of stack
 
 class Stack {
 private:
