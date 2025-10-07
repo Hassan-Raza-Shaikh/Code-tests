@@ -324,5 +324,39 @@ basic operations of queue
 - size (get number of elements in queue)
 
 potential applications of stack and queue in solving computer problems?
+stack
+Expression evaluation and syntax parsing
+Function call management
+Undo/Redo feature
+Backtracking algorithms
+queue
+CPU and I/O scheduling
+Data buffering
+Breadth-First Search (BFS)
+Printing and Task Queues
 applications ofstack and queue in schedualing of tasks and jobs while ram and processor are interacting with each oher?
+queue
+Process Scheduling (Ready Queue)
+I/O Queue
+stack 
+Function call stack during process execution
+Interrupt handling
 example application of stack and queue in development of different mobile and web apps in real world scenerios?
+stack
+Navigation (Back button functionality)
+Form Input Management (Undo/Redo)
+queue
+Message Queues in Chat or Notification Systems
+Task queues in backend servers
+Music or Video Playlist in Apps
+
+Lecture 16
+
+in queue and stack using array, vallue is not deleted, index is just moved back
+in dequeue, value is also returned when deleting/moving pointer back
+two indicators will be used, front and rear
+rear will move forward when inserting
+front will move forward when deleting
+
+Lecture 17
+
