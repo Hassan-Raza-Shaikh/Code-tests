@@ -360,3 +360,25 @@ front will move forward when deleting
 
 Lecture 17
 
+if u fill queue and then while dequeuing, if u want to insert others values in place that you removed without first emptying whole queue
+so we move rear to start if there is space in start
+this is called circular queue
+in circular queue, when rear or front reaches end, it will move to start if there is space
+to check if queue is full in circular queue
+if((rear+1)%maxSize==front)
+to check if queue is empty in circular queue
+if(front==-1)
+in circular queue, when inserting first element, front and rear both will be 0
+in circular queue, when deleting last element, front and rear both will be -1
+in circular queue, when inserting element, rear will be moved forward in circular manner
+rear=(rear+1)%maxSize;
+
+Lecture 18
+
+bubble sort
+compare two adjacent elements
+if first is greater than second, swap them
+repeat for all elements
+repeat for n-1 times
+insertion sort
+
