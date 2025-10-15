@@ -399,3 +399,10 @@ average case scenario big theta notation
 best case scenario big omega notation
 we make table to represent O Omega and theta of different algorithms
 remember graph for time complexities og big O
+
+Lecture 20
+
+same as discrete maths??!
+k is value when g(x) overtakes f(x) on graph
+c is the multiple on which value does that
+see log(n), n, log(log(n)), n^2, etc
