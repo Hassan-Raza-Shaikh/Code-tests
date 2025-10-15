@@ -381,4 +381,21 @@ if first is greater than second, swap them
 repeat for all elements
 repeat for n-1 times
 insertion sort
+ 
+Lecture 19
 
+for measurment of efficiency we take two things into account(measurements)
+-time complexity
+-space complexity
+time complexity is measured in terms of number of comparisons and number of swaps
+space complexity is measured in terms of number of variables used
+we easure it by the time compiler took to run the code
+we measure it by the memory used by the code
+but these are not accurate because they depend on many factors
+a computer is never in the same state twice
+it doesn't give exact idea of efficiency because its size can't be infinite on a practical device
+worst case scenario big O notation
+average case scenario big theta notation
+best case scenario big omega notation
+we make table to represent O Omega and theta of different algorithms
+remember graph for time complexities og big O
