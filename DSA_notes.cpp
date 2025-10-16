@@ -406,3 +406,6 @@ same as discrete maths??!
 k is value when g(x) overtakes f(x) on graph
 c is the multiple on which value does that
 see log(n), n, log(log(n)), n^2, etc
+
+Lecture 21
+
