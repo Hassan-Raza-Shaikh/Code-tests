@@ -406,6 +406,10 @@ same as discrete maths??!
 k is value when g(x) overtakes f(x) on graph
 c is the multiple on which value does that
 see log(n), n, log(log(n)), n^2, etc
+for log of log, we need power of power
+for multiple doublings or divisions, we need log whole power to the amount of loops
+recursion growing factor is function call, 
 
 Lecture 21
 
+bubble sorting, one iteration is called pass
