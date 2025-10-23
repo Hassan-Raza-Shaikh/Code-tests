@@ -413,3 +413,42 @@ recursion growing factor is function call,
 Lecture 21
 
 bubble sorting, one iteration is called pass
+
+Lecture 22
+
+selection sort
+best complexity: O(n^2)
+average complexity: O(n^2)
+worst complexity: O(n^2)
+
+bubble sort
+best complexity: O(n)
+average complexity: O(n^2)
+worst complexity: O(n^2)
+
+insertion sort
+best complexity: O(n)
+average complexity: O(n^2)
+worst complexity: O(n^2)
+
+merge sort
+best complexity: O(n log n)
+average complexity: O(n log n)
+worst complexity: O(n log n)
+
+quick sort
+best complexity: O(n log n)
+average complexity: O(n log n)
+worst complexity: O(n^2)
+
+heap sort
+best complexity: O(n log n)
+average complexity: O(n log n)
+worst complexity: O(n log n)
+
+merge sort and quick sort are divide and conquer algorithms
+merge sort divides array into two halves, sorts them recursively, and then merges them
+merge sort keeps splitting until single element, then merges back in the same order and groups as were broken from
+merge sort 2d array
+merge sort takes start and end index, and then when left index is equal to right it reaches a single elment and stops halving
+
