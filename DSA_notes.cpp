@@ -1,6 +1,3 @@
-Hello
-
-
 Lecture 1
 
 introduction
@@ -29,7 +26,7 @@ p = new int; // reassigns pointer to new address
 p = nullptr; // makes pointer null
 static memory is last in first out
 dynamic memory is in heap, manually managed
-if another P = new int;  written without delete p; then memory leak
+if another p = new int;  written without delete p; then memory leak
 dangling pointer is pointer pointing to freed memory (address of a variable that doesn't exist's)
 why do we make different pointers for different types if pointer just stores address?
 because of pointer arithmetic
@@ -68,7 +65,7 @@ Lecture 3
 
 fragment is scattered, defragmentation is unscattering it and making it continuous
 loop excecutes code beforehand, whereas recussion goes till end then updates all the waiting values
-recursion advantages and disadvantages?
+advantages and disadvantages of recursion
 
 Lecture 4
 
@@ -135,7 +132,7 @@ ye sahi linked list nahi bani, because fixed and no addition or removal
 Lecture 6
 
 if node is already present, the the node present before it, it will input the adress of new node into old one
-if none present, creeate node 
+if none present, create node 
 
 possibility 1: no node is present
 possibility 2: one or more than one node is present
@@ -310,7 +307,7 @@ two criteria for stack sorting
 queue is also an abstract data type
 queue works on first in first out mechanism
 its logic is opposite of stack, instead of insert and delete at head, we insert at head and delete at tail
-there are 3 differnt ways to use queue in c++
+there are 3 differnt ways to use queue in c++.
 - STL
 - linked list
 - array
@@ -451,4 +448,3 @@ merge sort divides array into two halves, sorts them recursively, and then merge
 merge sort keeps splitting until single element, then merges back in the same order and groups as were broken from
 merge sort 2d array
 merge sort takes start and end index, and then when left index is equal to right it reaches a single elment and stops halving
-
