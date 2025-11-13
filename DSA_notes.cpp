@@ -448,3 +448,34 @@ merge sort divides array into two halves, sorts them recursively, and then merge
 merge sort keeps splitting until single element, then merges back in the same order and groups as were broken from
 merge sort 2d array
 merge sort takes start and end index, and then when left index is equal to right it reaches a single elment and stops halving
+
+Lecture 23
+
+didn't happen'
+
+Lecture 24
+
+merge sort again
+
+Lecture 25
+
+paper discussion
+. and -> are different
+
+Lecture 26
+
+Trees
+at any point, the larger value from it is on right and if it is smaller it is on its left
+there are differet types of trees
+- simple trees
+- binary trees
+binary tree further has 3 types
+- self balancing tree
+- binary search tree
+- AVL tree
+main node is called root node
+ending nodes are called leaf nodes
+binary tree is a tree in which each node has two nodes
+binary search tree is a tree in which greater node then it is on right and smaller node is on right
+each node of a BST is a subtree of the ones following it
+each node has a left and right
