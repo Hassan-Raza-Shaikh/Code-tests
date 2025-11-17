@@ -479,3 +479,23 @@ binary tree is a tree in which each node has two nodes
 binary search tree is a tree in which greater node then it is on right and smaller node is on right
 each node of a BST is a subtree of the ones following it
 each node has a left and right
+
+Lecture 27
+
+Traversal in BST
+each node has two nodes
+smaller on left and larger on right
+strict binary search tree is one in which each node strictly has two nodes after each node
+this is only possible for odd numbers
+there are 4 methods of traversal
+- in order traversal
+- pre order traversal
+- post order traversal
+- level order traversal
+height of the tree is the no. of links between the further most leaf node and the root node
+pre order means top most is first - order dene wala phele ata hai
+in order means top most is in middle - order dene wala dono sides pe braber main aye ga
+post order means top most is last - order dene wala akhir main
+level order means the first item is at level 1 or 0 and next order is 1 or 2 and so on etc, so those on same level are siblings, so print in order
+in general we always traverse from left side first no matter what type we use
+pre and post are basically the opposite of each other
