@@ -499,3 +499,56 @@ post order means top most is last - order dene wala akhir main
 level order means the first item is at level 1 or 0 and next order is 1 or 2 and so on etc, so those on same level are siblings, so print in order
 in general we always traverse from left side first no matter what type we use
 pre and post are basically the opposite of each other
+
+Lecture 28
+
+there are 3 cases for deletion,
+- current node is the leaf node
+- current node has only 1 child node
+- current node has 2 child nodes
+in the 2 child case, we don't delete the current node but we delete the node whose value is to be replaced in that node'
+successor: node next to any node in traversal
+predecessor: node prev to any node in traversal
+for deleting node with no child, just reach and delete
+for deleting node with one child, reach and link parent to child, then delete
+for deleting node with two children, find inorder successor (leftmost of right subtree),or predecessor(rightmost of left subtree) copy its value to current node, then delete successor node which will have at most one child
+write in order values and next value to node or previos is to be replaced, this or min max is the same thing
+simple searching is done  in preorder way
+
+Lecture 29
+
+AVL trees
+AVL tree is a self balancing binary search tree
+in AVL tree, the difference between heights of left and right subtrees cannot be more than one
+if it becomes more than one, then we need to perform rotations to balance the tree
+BF=LHS-RHS
+if BF=-1,0,1 then tree is balanced
+if BF>1 then left heavy
+if BF<-1 then right heavy
+we find height, then balancing factor, then we balance tree if required
+for same values, different trees are possible depending on insertion order
+so for certain tree formation we can make it so that the height becomes half or almost half of Linkedlist
+- worst time complexity of AVL: log(n)
+- worst time complexity of BST: n
+AVL tree will insure that minimum possible height is maintained
+there are two possibiliteies:
+- a BST already exists and convert it to AVL
+- create an AVL tree foom scratch
+there are 4 rotation cases
+- left left case
+- right right case
+- left right case
+- right left case
+left left case: right rotation
+right right case: left rotation
+left right case: left rotation on left child, then right rotation on root
+right left case: right rotation on right child, then left rotation on root
+rotation is opposite of what is causing imbalance
+left left and right right case are single step corrections
+left right and right left case are double step corrections
+we write left right from root in order of which they are placed towards left or right, then rotation is same order 
+if it is a left right case, first we rotate the bottom node to left and  its root to right, then whole tree towrards right
+height is found using edges, nodes one not preferred
+basically for building an AVL tree from scratch, there can never be more than these two cases
+
+web links: what be they
