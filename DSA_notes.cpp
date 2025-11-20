@@ -551,4 +551,9 @@ if it is a left right case, first we rotate the bottom node to left and  its roo
 height is found using edges, nodes one not preferred
 basically for building an AVL tree from scratch, there can never be more than these two cases
 
-web links: what be they
+Lecture 30
+
+on each step find balancing factor
+going from bottom, first point where problem arises is where we fix it
+we go from depth to up wherever balancing factor is greater than 1 or less than -1 we fix it at that point
+which ever sides rotation, the maximum most dept value on that side
