@@ -557,3 +557,7 @@ on each step find balancing factor
 going from bottom, first point where problem arises is where we fix it
 we go from depth to up wherever balancing factor is greater than 1 or less than -1 we fix it at that point
 which ever sides rotation, the maximum most dept value on that side
+
+Lecture 31
+
+code of AVL tree

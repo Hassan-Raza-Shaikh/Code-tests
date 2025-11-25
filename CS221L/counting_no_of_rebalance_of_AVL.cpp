@@ -2,79 +2,91 @@
 using namespace std;
 
 struct Node {
-    int val;
-    Node* left;
-    Node* right;
+    int key;
+    Node *left, *right;
     int height;
-    Node(int v) {
-        val = v;
-        left = right = NULL;
+    int rebalanceCount;      // Track balance changes
+
+    Node(int k) {
+        key = k;
+        left = right = nullptr;
         height = 1;
+        rebalanceCount = 0;
     }
 };
 
-int h(Node* n) {
-    if (!n) return 0;
-    return n->height;
+int height(Node* n) {
+    return n ? n->height : 0;
 }
 
 int getBalance(Node* n) {
-    if (!n) return 0;
-    return h(n->left) - h(n->right);
+    return n ? height(n->left) - height(n->right) : 0;
+}
+
+void updateHeight(Node* n) {
+    n->height = max(height(n->left), height(n->right)) + 1;
+}
+
+void trackBalance(Node* n, int oldBF) {
+    int newBF = getBalance(n);
+    if (oldBF != newBF)
+        n->rebalanceCount++;
 }
 
 Node* rightRotate(Node* y) {
     Node* x = y->left;
-    Node* T = x->right;
+    Node* T2 = x->right;
 
     x->right = y;
-    y->left = T;
+    y->left = T2;
 
-    y->height = max(h(y->left), h(y->right)) + 1;
-    x->height = max(h(x->left), h(x->right)) + 1;
+    updateHeight(y);
+    updateHeight(x);
 
     return x;
 }
 
 Node* leftRotate(Node* x) {
     Node* y = x->right;
-    Node* T = y->left;
+    Node* T2 = y->left;
 
     y->left = x;
-    x->right = T;
+    x->right = T2;
 
-    x->height = max(h(x->left), h(x->right)) + 1;
-    y->height = max(h(y->left), h(y->right)) + 1;
+    updateHeight(x);
+    updateHeight(y);
 
     return y;
 }
 
-Node* insertNode(Node* root, int key) {
+Node* insert(Node* root, int key) {
     if (!root) return new Node(key);
 
-    if (key < root->val)
-        root->left = insertNode(root->left, key);
-    else if (key > root->val)
-        root->right = insertNode(root->right, key);
+    if (key < root->key)
+        root->left = insert(root->left, key);
+    else if (key > root->key)
+        root->right = insert(root->right, key);
     else
         return root;
 
-    root->height = max(h(root->left), h(root->right)) + 1;
+    int oldBF = getBalance(root);
+    updateHeight(root);
+    trackBalance(root, oldBF);
 
-    int balance = getBalance(root);
+    int bf = getBalance(root);
 
-    if (balance > 1 && key < root->left->val)
+    if (bf > 1 && key < root->left->key)
         return rightRotate(root);
 
-    if (balance < -1 && key > root->right->val)
+    if (bf < -1 && key > root->right->key)
         return leftRotate(root);
 
-    if (balance > 1 && key > root->left->val) {
+    if (bf > 1 && key > root->left->key) {
         root->left = leftRotate(root->left);
         return rightRotate(root);
     }
 
-    if (balance < -1 && key < root->right->val) {
+    if (bf < -1 && key < root->right->key) {
         root->right = rightRotate(root->right);
         return leftRotate(root);
     }
@@ -82,20 +94,22 @@ Node* insertNode(Node* root, int key) {
     return root;
 }
 
-void inorder(Node* root) {
+void printRebalance(Node* root) {
     if (!root) return;
-    inorder(root->left);
-    cout << root->val << " ";
-    inorder(root->right);
+    printRebalance(root->left);
+    cout << "Node " << root->key << " was rebalanced "
+         << root->rebalanceCount << " times\n";
+    printRebalance(root->right);
 }
 
 int main() {
-    Node* root = NULL;
-    root = insertNode(root, 10);
-    root = insertNode(root, 20);
-    root = insertNode(root, 5);
-    root = insertNode(root, 4);
-    root = insertNode(root, 15);
+    Node* root = nullptr;
 
-    inorder(root);
+    root = insert(root, 10);
+    root = insert(root, 20);
+    root = insert(root, 5);
+    root = insert(root, 4);
+    root = insert(root, 15);
+
+    printRebalance(root);
 }
