@@ -561,3 +561,37 @@ which ever sides rotation, the maximum most dept value on that side
 Lecture 31
 
 code of AVL tree
+
+Lecture 32
+
+deletion of AVL tree has exactly same casses as BST
+only difference is that after deletion, we need to check balancing factor and perform rotations if required
+we check from point of error which side is heavy and which side of that side is heavy
+then perform rotations accordingly
+rotation is opposite of what is causing imbalance
+
+graphs are non linear data structures
+graph is a collection of nodes and edges
+nodes are also called vertices
+edges are also called arcs
+graphs can be directed or undirected
+in directed graphs, edges have direction
+in undirected graphs, edges don't have direction
+graphs can be weighted or unweighted
+in weighted graphs, edges have weights
+in unweighted graphs, edges don't have weights
+if in a tree we combine two leaf nodes with an edge, it becomes a graph
+there are more than one way to reach from one node to another in graph
+graps keep record of connections between nodes
+graphs can be represented in two ways
+- adjacency matrix
+- adjacency list
+adjacency matrix is a 2D array where rows and columns represent nodes and values represent edges
+if there is an edge between node i and node j, then matrix[i][j]=1
+else matrix[i][j]=0
+for weighted graphs, matrix[i][j]=weight of edge
+if no edge, matrix[i][j]=infinity or some large value
+adjacency list is an array of lists where each index represents a node and the list at that index represents its adjacent nodes
+for weighted graphs, each element in the list is a pair of adjacent node and weight of edge
+adjacency list is more space efficient for sparse graphs
+adjacency matrix is more space efficient for dense graphs
