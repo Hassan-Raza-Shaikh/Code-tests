@@ -595,3 +595,31 @@ adjacency list is an array of lists where each index represents a node and the l
 for weighted graphs, each element in the list is a pair of adjacent node and weight of edge
 adjacency list is more space efficient for sparse graphs
 adjacency matrix is more space efficient for dense graphs
+
+Lecture 33
+
+in tree there is only one path between two nodes
+in graph there can be multiple paths between two nodes
+degree of a node is the number of edges connected to it
+in directed graphs, we have in-degree and out-degree
+recommended implementation of trees is using pointers and classes
+but for graphs, adjacency matrix and adjacency list are preferred (vectors and lists)
+in graphs we don't keep addresses of connections in that node, we keep record of connections in a separate structure so it's not an actual tree like structure, that is just drawn like that for understanding
+ontology: is a graph formed by multiple connections of nodes representing knowledge basis 
+adjacency matrix shows presence or absence of edge directly
+it shows weights directly
+adjacency list shows only connected nodes directly
+first is the node out of which all connections are made in one step, all the ones following it are the ones the first node can go to
+pyhton type of for loop is an iterator type loop
+this means the itterator is the value at the first index, otherwise loops are index based
+for(auto x: adjList[i])
+auto means the type is automatically detected
+x is the value at that index
+adjList[i] is the list at index i
+BFS: breath first search
+DFS: depth first search
+BFS prints adjacent nodes first, then goes deeper
+also no repetition of nodes
+DFS goes deeper first, then prints adjacent nodes
+also no repetition of nodes
+both can be implemented using recursion or using stack/queue
