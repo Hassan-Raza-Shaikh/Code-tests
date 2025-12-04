@@ -623,3 +623,22 @@ also no repetition of nodes
 DFS goes deeper first, then prints adjacent nodes
 also no repetition of nodes
 both can be implemented using recursion or using stack/queue
+
+Lecture 34
+
+BFS in grapgh using queue
+DFS in graph using stack or recursion
+notation is using arrows which doesn't mean we go from one to the next, but from first to all those mentioned after arrows'
+we will create a bool array to keep track of visited nodes
+in BFS we use queue to keep track of vertices to be visited wrt to current vertice
+in DFS we use stack or recursion to keep track of nodes to be visited
+BFS:
+place a number in queue, then pop it to show it
+then we place all its adjacent nodes in queue
+then we pop next number from queue, show it, and place all its adjacent nodes in queue
+repeat until queue is empty
+as we place vertices in queue, we mark them as visited
+whose vertices we are seeing next, we remove that from queue
+then we add all its adjacent vertices to queue if not visited
+then we repeat
+we make a tree like structure for traversal without repetition, and more than one type of tree can be made depending on which node is chosen first
