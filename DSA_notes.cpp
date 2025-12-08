@@ -642,3 +642,13 @@ whose vertices we are seeing next, we remove that from queue
 then we add all its adjacent vertices to queue if not visited
 then we repeat
 we make a tree like structure for traversal without repetition, and more than one type of tree can be made depending on which node is chosen first
+
+Lecture 35
+
+the difference between tree and graph is:
+is that there is no closed loop in tree, whereas in graph there can be closed loops
+in tree there is only one path between two nodes, whereas in graph there can be multiple paths
+in tree there is a root node, whereas in graph there is no root node
+in tree there are no cycles, whereas in graph there can be cycles
+in simple tree, we keep an array of pointers in each node to point to its children, so that we can keep more than 2 nodes
+in binary tree, we keep two pointers in each node to point to its left and right children
