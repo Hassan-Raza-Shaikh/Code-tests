@@ -652,3 +652,49 @@ in tree there is a root node, whereas in graph there is no root node
 in tree there are no cycles, whereas in graph there can be cycles
 in simple tree, we keep an array of pointers in each node to point to its children, so that we can keep more than 2 nodes
 in binary tree, we keep two pointers in each node to point to its left and right children
+
+Lecture 36
+
+DFS:
+we use stack or recursion
+we place a number in stack, then pop it to show it
+then we place all its adjacent nodes in stack
+then we pop next number from stack, show it, and place all its adjacent nodes in stack
+repeat until stack is empty
+as we place vertices in stack, we mark them as visited
+whose vertices we are seeing next, we remove that from stack
+then we add all its adjacent vertices to stack if not visited
+then we repeat
+in DFS, we go deeper first, then print adjacent nodes
+in BFS, we print adjacent nodes first, then go deeper
+both can be implemented using recursion or using stack/queue
+a vector of vectors is used to create adjacency list
+vector<vector<int>> adjList;
+each index of adjList represents a node
+adjList[i] is a vector containing all adjacent nodes of node i
+matrix contais record of which nodes we can not go to from which nodes
+
+Lecture 37
+
+
+There are two techniques for DFS
+- running stack technique
+- suspension stack technique
+in running stack technique, we use a recursion to keep track of nodes to be visited
+in suspension stack technique, we use stack to keep track of nodes to be visited
+in running stack technique, we call DFS recursively for adjacent nodes
+in suspension stack technique, we push adjacent nodes onto stack 
+
+all the nodes we are visiting will be kept in recursion and we will go deeper until no unvisited adjacent nodes are left
+then we backtrack using stack or recursion
+we keep track of visited nodes using a bool array
+this is in running stack
+
+all the nodes we are visiting, we will pop it before going deeper
+then we push all its unvisited adjacent nodes onto stack
+then we pop next node from stack and repeat
+this is in suspension stack
+
+Recursive DFS pops (finishes) node before exploring the next adjacency list.
+Iterative DFS pushes all neighbors, then pops from the stack later.
+

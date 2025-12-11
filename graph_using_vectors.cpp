@@ -1,117 +1,109 @@
 #include <iostream>
 #include <vector>
+#include <stack>
+#include <queue>
 using namespace std;
 
 class Graph {
-private:
-    vector<vector<int>> adj;  // adjacency list using vectors
-    bool directed;
-
 public:
-    Graph(bool isDirected) {
-        directed = isDirected;
-    }
+    int V;
+    vector<vector<int>> adj;
 
-    void addVertex() {
-        adj.push_back(vector<int>());  // create empty adjacency list
-        cout << "Vertex " << adj.size() - 1 << " added.\n";
+    Graph(int V) {
+        this->V = V;
+        adj.resize(V);
     }
 
     void addEdge(int u, int v) {
-        if (u >= adj.size() || v >= adj.size()) {
-            cout << "Invalid edge!\n";
-            return;
-        }
-
         adj[u].push_back(v);
-
-        if (!directed)
-            adj[v].push_back(u);
+        adj[v].push_back(u); // undirected graph
     }
 
-    void deleteEdge(int u, int v) {
-        if (u >= adj.size() || v >= adj.size()) {
-            cout << "Invalid edge!\n";
-            return;
+    // -------------------- BFS --------------------
+    void BFS(int start) {
+        vector<bool> visited(V, false);
+        queue<int> q;
+
+        visited[start] = true;
+        q.push(start);
+
+        cout << "BFS: ";
+
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+            cout << node << " ";
+
+            for (int neighbor : adj[node]) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.push(neighbor);
+                }
+            }
         }
-
-        // remove v from u's adjacency list
-        removeFromList(adj[u], v);
-
-        // remove u from v's adjacency list (if undirected)
-        if (!directed)
-            removeFromList(adj[v], u);
+        cout << endl;
     }
 
-    // Helper to remove element from vector
-    void removeFromList(vector<int> &list, int val) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list[i] == val) {
-                list.erase(list.begin() + i);
-                return;
+    // -------------------- DFS (Recursive) --------------------
+    void DFS_recursive_util(int node, vector<bool>& visited) {
+        visited[node] = true;
+        cout << node << " ";
+
+        for (int neighbor : adj[node]) {
+            if (!visited[neighbor]) {
+                DFS_recursive_util(neighbor, visited);  // running stack DFS
             }
         }
     }
 
-    void deleteVertex(int v) {
-        if (v < 0 || v >= adj.size()) {
-            cout << "Invalid vertex!\n";
-            return;
-        }
-
-        // Step 1: Remove edges pointing to v, and shift numbered vertices
-        for (int i = 0; i < adj.size(); i++) {
-            removeFromList(adj[i], v);
-
-            // fix edge numbers after deleting vertex
-            for (int &to : adj[i]) {
-                if (to > v) to--;   // shift indices down
-            }
-        }
-
-        // Step 2: Delete the vertex's adjacency list
-        adj.erase(adj.begin() + v);
-
-        cout << "Vertex " << v << " deleted.\n";
+    void DFS_recursive(int start) {
+        vector<bool> visited(V, false);
+        cout << "DFS (Recursive): ";
+        DFS_recursive_util(start, visited);
+        cout << endl;
     }
 
-    void printGraph() {
-        cout << "\nAdjacency List:\n";
-        for (int i = 0; i < adj.size(); i++) {
-            cout << i << " -> ";
-            for (int v : adj[i]) {
-                cout << v << " ";
+    // -------------------- DFS (Iterative using explicit stack) --------------------
+    void DFS_iterative(int start) {
+        vector<bool> visited(V, false);
+        stack<int> st;
+
+        st.push(start);
+        cout << "DFS (Iterative Stack): ";
+
+        while (!st.empty()) {
+            int node = st.top();
+            st.pop();
+
+            if (!visited[node]) {
+                cout << node << " ";
+                visited[node] = true;
             }
-            cout << endl;
+
+            // Push neighbors in reverse so order matches recursive DFS
+            for (int i = adj[node].size() - 1; i >= 0; i--) {
+                int neighbor = adj[node][i];
+                if (!visited[neighbor]) {
+                    st.push(neighbor);  // suspension stack DFS
+                }
+            }
         }
+        cout << endl;
     }
 };
 
 int main() {
-    Graph g(false);  // undirected graph
-
-    g.addVertex();  // 0
-    g.addVertex();  // 1
-    g.addVertex();  // 2
-    g.addVertex();  // 3
+    Graph g(6);
 
     g.addEdge(0, 1);
-    g.addEdge(1, 2);
-    g.addEdge(2, 3);
+    g.addEdge(0, 2);
+    g.addEdge(1, 3);
+    g.addEdge(2, 4);
+    g.addEdge(3, 5);
 
-    g.printGraph();
-
-    cout << "\nDeleting edge 1-2...\n";
-    g.deleteEdge(1, 2);
-    g.printGraph();
-
-    cout << "\nAdding vertex...\n";
-    g.addVertex();   // new vertex 4
-    g.printGraph();
-
-    cout << "\nDeleting vertex 1...\n";
-    g.deleteVertex(1);
-    g.printGraph();
+    g.BFS(0);
+    g.DFS_recursive(0);
+    g.DFS_iterative(0);
 
     return 0;
 }
