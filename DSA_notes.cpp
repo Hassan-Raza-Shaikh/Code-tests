@@ -698,3 +698,43 @@ this is in suspension stack
 Recursive DFS pops (finishes) node before exploring the next adjacency list.
 Iterative DFS pushes all neighbors, then pops from the stack later.
 
+Lecture 38
+
+hash is used when we need fast insertion, deletion or searching
+BST is used when we need sorted data, and AVL if sorted and fast searching
+Linked list for 
+graph is used for finding shortest path among multiple paths
+
+any graph when traversing BFS or DFS converts into a spanning tree (tree not BST), because no node/vertex is visited twice
+graphs decide the style or alignment of tree
+possible spanning combinations of a tree of graph are n^(n-2) wrt 
+
+Lecture 39 (in lab)
+
+hashing is used when we wanr lowest time complexity o(1) for insertion, removal and deletion
+but it is the worst for sorting
+limitation is the amount of data that we can store
+we create a hash function
+it takes a key, and against it returns a value which we call hash value
+key is the thing we want to store, value is the place/index of array we are going to store it
+hash function converts that key into its index/hash value
+then that is known as hash table, where we store keys
+we have to make a hash function that takes key and converts it into its hash and vice versa so we have to devise its formula/method
+size of hash depends on type of data structure that we use
+if we have to chnage size of hash, we have to change size of hash function too
+most general hash function is taking mod of key with 10 and using remainder as index
+everything happens in constant time
+but the problem with this is that collision can occur if two values have the same hash value
+then to resolve this we resolve by open chaining or close chaining
+for close chaining
+linear prob, we search and insert in nearest free slot
+linear prob is not good because clustering can occur
+quadratic prob, we search and insert in nearest free slot in quadratic manner, every second slot is checked
+the more higher jump we make, the worse the complexity gets
+in open chaining
+we make a linked list at each index of hash table
+then if collision occurs, we insert that value in linked list
+in this case best case is o(1) and worst case is o(n)
+worst case complexity for this depends on what data structures are used in hash for further value insertion
+for quadratic probing, index is changed in quadratic manner wrt original key
+for linear probing, index is changed in linear manner wrt index after each
