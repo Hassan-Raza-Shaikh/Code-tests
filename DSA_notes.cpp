@@ -738,3 +738,51 @@ in this case best case is o(1) and worst case is o(n)
 worst case complexity for this depends on what data structures are used in hash for further value insertion
 for quadratic probing, index is changed in quadratic manner wrt original key
 for linear probing, index is changed in linear manner wrt index after each
+
+Lecture 40
+
+-prefix: +ab
+-postfix: ab+
+-infix: a+b
+
+operator precedence:
+1. parentheses
+2. exponents
+3. multiplication and division
+4. addition and subtraction
+
+associativity:
+-left to right for +, -, *, /
+-right to left for ^
+to convert infix to postfix:
+-use stack to hold operators
+-output list for postfix expression
+-scan infix expression from left to right
+-if operand, add to output list
+-if '(', push to stack
+-if ')', pop from stack to output list until '(' is found
+-if operator, pop from stack to output list while top of stack has same or higher precedence, then push current operator to stack
+-after scanning infix, pop all operators from stack to output list
+
+to convert infix to prefix:
+-reverse infix expression
+-swap '(' with ')' and vice versa
+-convert reversed infix to postfix using above method
+-reverse postfix expression to get prefix
+
+to evaluate postfix expression:
+-use stack to hold operands
+-scan postfix expression from left to right
+-if operand, push to stack
+-if operator, pop two operands from stack, apply operator, push result back to stack
+-after scanning postfix, top of stack is result
+to evaluate prefix expression:
+-use stack to hold operands
+-scan prefix expression from right to left
+-if operand, push to stack
+-if operator, pop two operands from stack, apply operator, push result back to stack
+-after scanning prefix, top of stack is result
+
+spanning tree of graph is a tree that includes all vertices of the graph with minimum possible edges
+minimum spanning tree is a spanning tree with minimum total edge weight
+spanning tree can be made using DFS or BFS
