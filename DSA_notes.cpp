@@ -786,3 +786,48 @@ to evaluate prefix expression:
 spanning tree of graph is a tree that includes all vertices of the graph with minimum possible edges
 minimum spanning tree is a spanning tree with minimum total edge weight
 spanning tree can be made using DFS or BFS
+
+Lecture 41
+
+prefix, infix, and postfix notations
+operators, evaluations and executions
+infix: a + b
+postfix: ab+
+prefix: +ab
+infix is human friendly, postfix and prefix are machine friendly
+in postfix and prefix, no need for parentheses
+precedence rules are same for all notations
+associativity rules are same for all notations
+- parentheses
+- exponents
+- multiplication and division
+- addition and subtraction
+evaluate from left to right for +, -, *, /
+evaluate from right to left for ^
+move operators to left in prefix and right in postfix
+but always keep the order of equations left to right
+to convert infix to prefix:
+a+b*c
+a+bc*
++ a * b c
+to convert infix to postfix:
+a+b*c
+abc*+
+ab c * +
+this notation is used in compilers and calculators and it removes ambiguity and brackets
+prefix is reaf left to right
+postfix is read right to left
+keep reading left to right always and evaluate the one with highest precedence first and if 2 or more same precedence then evaluate left one first
+
+rules for stack based evaluation of infix to postfix:
+if stack contain sign of less precedence then sign of more precedence can be pushed directly
+if stack contain sign of more precedence then sign of less precedence then pop all signs of more precedence
+if stack contain sign of same precedence then pop all signs of same precedence
+then push the new sign
+at the end pop all signs from stack
+for parantheses, if ( is found push it directlyif ) is found pop all signs until ( is found then pop ( also
+
+rules for stack based evaluation of infix to prefix:
+reverse the infix expression and place everything in reverse order or flip in end
+swap ( with ) and vice versa
+apply infix to postfix rules

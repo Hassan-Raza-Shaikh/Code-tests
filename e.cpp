@@ -1,87 +1,89 @@
 #include <iostream>
 using namespace std;
 
-class CircularQueue {
-    static const int SIZE = 5;  // fixed size (static array)
-    int arr[SIZE];
-    int front, rear, count;
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int val) {
+        data = val;
+        next = NULL;
+    }
+};
+
+class LinkedList {
+private:
+    Node* head;
+    int count;   // number of nodes
 
 public:
-    CircularQueue() {
-        front = -1;
-        rear = -1;
+    LinkedList() {
+        head = NULL;
         count = 0;
     }
-bool isfull()
-{
-    if(count==SIZE){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-bool isempty()
-{
-    if(count==0){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-    void enqueue(int v){
-     if(isfull()==true)
-     {
-        cout<<"queue full";
 
-     }
-     else{
-                if (isempty())
-            front = 0;
-        rear = (rear+1)%SIZE;
+    void insert(int val) {
+        Node* newNode = new Node(val);
 
-        arr[rear]=v;
-        count++;
-     }}
-void dequeue(){
-     if(isempty()==true)
-     {
-        cout<<"queue empty";
-
-     }
-     else{
-        front = (front+1)%SIZE;
-        count--;
-     }
-    }
-void display(){
-    cout<<endl;
-    for(int i=0;i<count;i++){
-        cout<<arr[(front+i)%SIZE]<<"  ";
+        if (head == NULL) {
+            head = newNode;
+        } else {
+            Node* temp = head;
+            while (temp->next != NULL)
+                temp = temp->next;
+            temp->next = newNode;
+        }
+        count++;   // increment node count
     }
 
-}
+    // Bubble Sort using FOR loops (array-style)
+    void bubbleSort() {
+       if(head==nullptr)
+       {
+        return;
+       }
+       for(int i=0;i<count-1;i++){
+        Node*curr=head;
+        for(int j=0;j<count-i-1;j++){
+           
+               if(curr->data > curr->next->data)
+               {
+                int temp = curr->data;
+                curr->data = curr->next->data;
+                curr->next->data=temp;
+               }
+               curr=curr->next;
+        }
+       }
+    }
 
+    void display() {
+        Node* temp = head;
+        while (temp != NULL) {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << "NULL\n";
+    }
 };
 
 int main() {
-    CircularQueue q;
+    LinkedList list;
 
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
-    q.enqueue(40);
-    q.enqueue(50);
-    q.display();
+    list.insert(5);
+    list.insert(1);
+    list.insert(4);
+    list.insert(2);
+    list.insert(8);
 
-    q.dequeue();
-    q.dequeue();
-    q.display();
+    cout << "Before Sorting:\n";
+    list.display();
 
-    q.enqueue(60);
-    q.enqueue(70);
-    q.display();
+    list.bubbleSort();
+
+    cout << "After Sorting:\n";
+    list.display();
 
     return 0;
 }
