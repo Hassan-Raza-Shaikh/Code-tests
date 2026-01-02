@@ -66,6 +66,14 @@ Lecture 3
 fragment is scattered, defragmentation is unscattering it and making it continuous
 loop excecutes code beforehand, whereas recussion goes till end then updates all the waiting values
 advantages and disadvantages of recursion
+| Aspect           | Recursion               | Iteration     |
+| ---------------- | ----------------------- | ------------- |
+| Code readability | High                    | Medium        |
+| Performance      | Slower                  | Faster        |
+| Memory usage     | High (stack)            | Low           |
+| Best for         | Trees, Divide & Conquer | Simple loops  |
+| Risk             | Stack overflow          | Infinite loop |
+
 
 Lecture 4
 
@@ -612,7 +620,7 @@ adjacency list shows only connected nodes directly
 first is the node out of which all connections are made in one step, all the ones following it are the ones the first node can go to
 pyhton type of for loop is an iterator type loop
 this means the itterator is the value at the first index, otherwise loops are index based
-for(auto x: adjList[i])
+for(auto &x: adjList[i])
 auto means the type is automatically detected
 x is the value at that index
 adjList[i] is the list at index i
@@ -626,7 +634,7 @@ both can be implemented using recursion or using stack/queue
 
 Lecture 34
 
-BFS in grapgh using queue
+BFS in graph using queue
 DFS in graph using stack or recursion
 notation is using arrows which doesn't mean we go from one to the next, but from first to all those mentioned after arrows'
 we will create a bool array to keep track of visited nodes
